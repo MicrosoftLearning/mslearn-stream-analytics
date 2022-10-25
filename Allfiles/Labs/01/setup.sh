@@ -1,3 +1,4 @@
+cls
 echo Installing required Azure CLI extensions - this may take a few minutes...
 az extension add --name azure-iot
 az extension add --name stream-analytics

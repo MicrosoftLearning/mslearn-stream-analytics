@@ -33,7 +33,7 @@ You'll need an [Azure subscription](https://azure.microsoft.com/free) in which y
 
 5. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.sh** script it contains:
 
-    ```
+    ```bash
     cd dp-000/Allfiles/Labs/01
     bash setup.sh
     ```

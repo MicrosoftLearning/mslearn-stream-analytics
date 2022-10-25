@@ -1,4 +1,4 @@
-cls
+clear
 echo Installing required Azure CLI extensions - this may take a few minutes...
 az extension add --name azure-iot
 az extension add --name stream-analytics
@@ -15,7 +15,7 @@ regions[1]="eastus"
 regions[2]="southcentralus"
 size=${#regions[@]}
 index=$(($RANDOM % $size))
-region = ${regions[$index]}
+region=${regions[$index]}
 echo Using $region
 az group create --name $rg --location $region --output none
 

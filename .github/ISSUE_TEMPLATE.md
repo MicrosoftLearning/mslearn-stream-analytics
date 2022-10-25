@@ -1,9 +1,6 @@
-# Module: 00
-## Lab/Demo: 00
-### Task: 00
-#### Step: 00
+Exercise: *Exercise name*
 
-Description of issue
+*Description of issue*
 
 Repro steps:
 

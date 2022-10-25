@@ -1,5 +1,4 @@
-# Module: 00
-## Lab/Demo: 00
+Exercise: *Exercise name*
 
 Fixes # .
 

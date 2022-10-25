@@ -27,6 +27,7 @@ You'll need an [Azure subscription](https://azure.microsoft.com/free) in which y
 4. In the PowerShell pane, enter the following commands to clone the repo containing this exercise:
 
     ```bash
+    rm -r dp-000 -f
     git clone https://github.com/MicrosoftLearning/mslearn-stream-analytics dp-000
     ```
 

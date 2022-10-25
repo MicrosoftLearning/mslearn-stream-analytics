@@ -8,7 +8,7 @@ az provider register --namespace 'Microsoft.StreamAnalytics' --wait 2>nul
 echo Creating resource group...
 rgguid=$(cat /proc/sys/kernel/random/uuid)
 rgsuffix=${rgguid//[-]/}
-rgsuffix=${rgsuffix:0:6}
+rgsuffix=${rgsuffix:0:7}
 rg=dp000-${rgsuffix}
 regions[0]="westus"
 regions[1]="eastus"

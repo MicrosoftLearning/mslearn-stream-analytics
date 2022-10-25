@@ -48,8 +48,8 @@ You'll need an [Azure subscription](https://azure.microsoft.com/free) in which y
 
 ## Explore the Azure resources
 
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), on the home page, select **Resource groups** to see the resource groups in your subscription. This should include the **learn*xxxxxxxxxxxxxxxxx...*** resource group identified by the setup script.
-2. Select the **learn*xxxxxxxxxxxxxxxxx...*** resource group, and review the resources it contains, which should include:
+1. In the [Azure portal](https://portal.azure.com?azure-portal=true), on the home page, select **Resource groups** to see the resource groups in your subscription. This should include the **dp000-*xxxxxxx*** resource group identified by the setup script.
+2. Select the **dp000-*xxxxxxx*** resource group, and review the resources it contains, which should include:
     - An *IoT Hub* named **iothub*xxxxxxxxxxxxx***, which is used to receive incoming device data.
     - A *Storage account* named **store*xxxxxxxxxxxx***, to which the data processing results will be written.
     - A *Stream Analytics job* named **stream*xxxxxxxxxxxxx***, which will be used to process streaming data.
@@ -78,7 +78,7 @@ You'll need an [Azure subscription](https://azure.microsoft.com/free) in which y
     Device simulation in progress: 6%|#    | 7/120 [00:08<02:21, 1.26s/it]
     ```
 
-5. While the simulation is running, back in the Azure portal, return to the page for the **learn*xxxxxxxxxxxxxxxxx...*** resource group, and select the **store*xxxxxxxxxxxx*** storage account.
+5. While the simulation is running, back in the Azure portal, return to the page for the **dp000-*xxxxxxx*** resource group, and select the **store*xxxxxxxxxxxx*** storage account.
 6. In the pane on the left of the storage account blade, select the **Containers** tab.
 7. Open the **data** container.
 8. In the **data** container, navigate through the folder hierarchy, which includes a folder for the current year, with subfolders for the month, day, and hour.
@@ -95,7 +95,7 @@ You'll need an [Azure subscription](https://azure.microsoft.com/free) in which y
 11. Use the **&#8635; Refresh** button to refresh the file, noting that additional results are written to the file as Stream Analytics job processes the device data in real time as it is streamed from the device to the IoT Hub.
 12. Return to the Azure Cloud Shell and wait for the device simulation to finish (it should run for around 3 minutes).
 13. Back in the Azure portal, refresh the file one more time to see the full set of results that were produced during the simulation.
-14. Return to the **learn*xxxxxxxxxxxxxxxxx...*** resource group, and re-open the **stream*xxxxxxxxxxxxx*** Stream Analytics job.
+14. Return to the **dp000-*xxxxxxx*** resource group, and re-open the **stream*xxxxxxxxxxxxx*** Stream Analytics job.
 15. At the top of the Stream Analytics job page, use the **&#11036; Stop** button to stop the job, confirming when prompted.
 
-> **Note**: If you've finished exploring the streaming solution, delete the resource group that you created in this exercise.
+> **Note**: If you've finished exploring the streaming solution, delete the **dp000-*xxxxxxx*** resource group that you created in this exercise.

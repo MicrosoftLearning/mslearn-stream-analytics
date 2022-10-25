@@ -31,15 +31,10 @@ You'll need an [Azure subscription](https://azure.microsoft.com/free) in which y
     git clone https://github.com/MicrosoftLearning/mslearn-stream-analytics dp-000
     ```
 
-5. Wait for the command to complete, and then enter the following command to change the current directory to the folder containing the files for this exercise.
+5. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.sh** script it contains:
 
-    ```bash
-    cd dp-000/Allfiles/Labs/01
     ```
-
-6. Enter the following command to run a script that creates the Azure resources you will need in this exercise.
-
-    ```bash
+    cd dp-000/Allfiles/Labs/01
     bash setup.sh
     ```
 

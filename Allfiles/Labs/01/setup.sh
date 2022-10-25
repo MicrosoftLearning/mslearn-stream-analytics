@@ -8,7 +8,7 @@ az provider register --namespace 'Microsoft.StreamAnalytics' --wait 2>nul
 echo Creating resource group...
 rgguid=$(cat /proc/sys/kernel/random/uuid)
 rgsuffix=${rgguid//[-]/}
-rgsuffix=${rgsuffix:0:18}
+rgsuffix=${rgsuffix:0:6}
 rg=dp000-${rgsuffix}
 regions[0]="westus"
 regions[1]="eastus"
@@ -16,6 +16,7 @@ regions[2]="southcentralus"
 size=${#regions[@]}
 index=$(($RANDOM % $size))
 region = ${regions[$index]}
+echo Using $region
 az group create --name $rg --location $region --output none
 
 

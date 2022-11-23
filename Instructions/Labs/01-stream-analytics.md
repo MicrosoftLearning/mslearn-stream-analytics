@@ -160,23 +160,23 @@ OK, now you're ready to run the job and process some real-time sales order data.
 4. While the app is running, back in the Azure portal, return to the page for the **dp000-*xxxxxxx*** resource group, and select the **store*xxxxxxxxxxxx*** storage account.
 6. In the pane on the left of the storage account blade, select the **Containers** tab.
 7. Open the **data** container, and use the **&#8635; Refresh** button to refresh the view until you see a folder with the name of the current year.
-8. In the **data** container, navigate through the folder hierarchy, which includes the folder for the current year, with subfolders for the month, day, and hour.
+8. In the **data** container, navigate through the folder hierarchy, which includes the folder for the current year, with subfolders for the month and day.
 9. In the folder for the hour, note the file that has been created, which should have a name similar to **0_xxxxxxxxxxxxxxxx.json**.
 10. On the **...** menu for the file (to the right of the file details), select **View/edit**, and review the contents of the file; which should consist of a JSON record for each 10 second period, showing the number of orders processed for each product ID, like this:
 
     ```
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":6,"Orders":13.0}
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":8,"Orders":15.0}
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":5,"Orders":15.0}
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":1,"Orders":16.0}
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":3,"Orders":10.0}
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":2,"Orders":25.0}
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":7,"Orders":13.0}
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":4,"Orders":12.0}
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":10,"Orders":19.0}
-    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:30.0000000Z","ProductID":9,"Orders":8.0}
-    {"StartTime":"2022-11-23T18:16:35.0000000Z","EndTime":"2022-11-23T18:16:40.0000000Z","ProductID":6,"Orders":41.0}
-    {"StartTime":"2022-11-23T18:16:35.0000000Z","EndTime":"2022-11-23T18:16:40.0000000Z","ProductID":8,"Orders":29.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":6,"Orders":13.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":8,"Orders":15.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":5,"Orders":15.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":1,"Orders":16.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":3,"Orders":10.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":2,"Orders":25.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":7,"Orders":13.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":4,"Orders":12.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":10,"Orders":19.0}
+    {"StartTime":"2022-11-23T18:16:25.0000000Z","EndTime":"2022-11-23T18:16:35.0000000Z","ProductID":9,"Orders":8.0}
+    {"StartTime":"2022-11-23T18:16:35.0000000Z","EndTime":"2022-11-23T18:16:45.0000000Z","ProductID":6,"Orders":41.0}
+    {"StartTime":"2022-11-23T18:16:35.0000000Z","EndTime":"2022-11-23T18:16:45.0000000Z","ProductID":8,"Orders":29.0}
     ...
     ```
 

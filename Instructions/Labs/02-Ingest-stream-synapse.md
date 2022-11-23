@@ -127,7 +127,7 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 ### Create a query to ingest the event stream
 
 1. View the **Query** page for the **ingest-orders** Stream Analytics job. Then wait a few moments until the input preview is displayed (based on the sales order events previously captured in the event hub).
-2. Observe that the input data includes the **ProductID** and **Quantity** fields in the messages submitted by the client app, as well as additional Event Hubs fuelds - including the **EventProcessedUtcTime** field that indicates when the event was added to the event hub.
+2. Observe that the input data includes the **ProductID** and **Quantity** fields in the messages submitted by the client app, as well as additional Event Hubs fields - including the **EventProcessedUtcTime** field that indicates when the event was added to the event hub.
 3. Modify the default query as follows:
 
     ```

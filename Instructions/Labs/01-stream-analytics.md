@@ -157,7 +157,7 @@ OK, now you're ready to run the job and process some real-time sales order data.
     node ~/dp-000/Allfiles/Labs/01/orderclient
     ```
 
-4. While the app is running, back in the Azure portal, return to the page for the **dp000-*xxxxxxx*** resource group, and select the **store*xxxxxxxxxxxx*** storage account.
+4. While the app is running, in the Azure portal, return to the page for the **dp000-*xxxxxxx*** resource group, and select the **store*xxxxxxxxxxxx*** storage account.
 6. In the pane on the left of the storage account blade, select the **Containers** tab.
 7. Open the **data** container, and use the **&#8635; Refresh** button to refresh the view until you see a folder with the name of the current year.
 8. In the **data** container, navigate through the folder hierarchy, which includes the folder for the current year, with subfolders for the month and day.

@@ -122,12 +122,12 @@ An Azure Stream Analytics job defines a perpetual query that operates on streami
     INTO
         [powerbi-dataset]
     FROM
-        [orders] TIMESTAMP BY EventProcessedUtcTime
+        [orders] TIMESTAMP BY EventEnqueuedUtcTime
     GROUP BY ProductID, TumblingWindow(second, 5)
     HAVING COUNT(*) > 1
     ```
 
-    Observe that this query uses the **System.Timestamp** (based on the **EventProcessedUtcTime** field) to define the start and end of each 5 second *tumbling* (non-overlapping sequential) window in which the total quantity for each product ID is calculated.
+    Observe that this query uses the **System.Timestamp** (based on the **EventEnqueuedUtcTime** field) to define the start and end of each 5 second *tumbling* (non-overlapping sequential) window in which the total quantity for each product ID is calculated.
 
 3. Save the query.
 
@@ -138,7 +138,7 @@ An Azure Stream Analytics job defines a perpetual query that operates on streami
 3. Re-open the cloud shell pane and re-run the following command to submit 100 orders.
 
     ```
-    node ~/dp-000/Allfiles/Labs/22/orderclient
+    node ~/dp-000/Allfiles/Labs/03/orderclient
     ```
 
 4. While the order client app is running, switch to the Power BI app browser tab and view your workspace.
@@ -146,30 +146,33 @@ An Azure Stream Analytics job defines a perpetual query that operates on streami
 
 ## Visualize the streaming data in Power BI
 
-Now that you have a dataset for the streaming order data, you can create a Power BI report that represents it visually.
+Now that you have a dataset for the streaming order data, you can create a Power BI dashboard that represents it visually.
 
-1. Use the **...** menu for the **realtime-data** dataset to create a report.
-2. In the **Visualizations** pane, select the **Clustered column chart** visualization.
-3. In the **Fields** pane, expand the **orders** table, and then drag the following fields to the appropriate areas in the **Visualizations** pane:
-    - **X-axis** : **EndTime**
-    - **Y-axis**: **&#8721; Orders** (this will be interpreted as *Sum of Orders*)
+1. In the **+ New** drop-down menu for your workspace, select **Dashboard**, and create a new dashboard named **Order Tracking**.
+2. In the **&#9999;&#65039; Edit** menu for the **Order Tracking** dashboard, select **Add a tile**. Then in the **Add a tile** pane, select **Custom Streaming Data** and click **Next**:
 
-4. Verify that your report shows the sum of orders for each 5-second interval, and looks similar to this:
+    ![A screenshot of the Add a tile pane in Power BI.](./images/powerbi-stream-tile.png)
 
-    ![A screenshot of a Power BI report with a clustered column chart showing sum of orders by end time.](./images/powerbi-line-chart.png)
+3. In the **Add a custom streaming data tile** pane, under **Your datasets**, select the **realtime-data** dataset, and click **Next**.
 
-5. Save the report, naming it **Realtime Orders**.
+4. Change the default visualization type to **Line chart**. Then set the following properties and click **Next**:
+    - **Axis**: EndTime
+    - **Value**: Orders
+    - **Time window to display**: 1 Minute
+
+5. On the **Tile details** pane, set the **Title** to **Real-time Order Count** and click **Apply**.
+
 6. Switch back to the browser tab containing the Azure portal, and if necessary, re-open the cloud shell pane. Then re-run the following command to submit another 100 orders.
 
     ```
     node ~/dp-000/Allfiles/Labs/03/orderclient
     ```
 
-7. While the order submission script is running, switch back to the browser tab containing the **Realtime Orders** Power BI report and refresh it; verifying that the visualization updates to reflect the new order data as it is processed by the Stream Analytics job (which should still be running).
+7. While the order submission script is running, switch back to the browser tab containing the **Order Tracking** Power BI dashboard and observe that the visualization updates to reflect the new order data as it is processed by the Stream Analytics job (which should still be running).
 
-    ![A screenshot of a Power BI report showing a realtime stream of order data.](./images/powerbi-stream-report.png)
+    ![A screenshot of a Power BI report showing a realtime stream of order data.](./images/powerbi-line-chart.png)
 
-    In this exercise, you've created a simple visualization. You could create a report that includes multiple visualizations based on the data in the streaming dataset. Whenever the report is viewed, the visualizations reflect the most recently captured data.
+    You can re-run the **orderclient** script and observe the data being captured in the real-time dashboard.
 
 ## Delete resources
 

@@ -1,9 +1,6 @@
 Clear-Host
 write-host "Starting script at $(Get-Date)"
 
-Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-Install-Module -Name Az.Synapse -Force
-
 # Handle cases where the user has multiple subscriptions
 $subs = Get-AzSubscription | Select-Object
 if($subs.GetType().IsArray -and $subs.length -gt 1){
@@ -41,7 +38,7 @@ if($subs.GetType().IsArray -and $subs.length -gt 1){
 
 # Register resource providers
 Write-Host "Registering resource providers...";
-$provider_list = "Microsoft.Synapse", "Microsoft.EventHub", "Microsoft.StreamAnalytics", "Microsoft.Sql", "Microsoft.Storage", "Microsoft.Compute"
+$provider_list = "Microsoft.EventHub", "Microsoft.StreamAnalytics", "Microsoft.Storage", "Microsoft.Compute"
 foreach ($provider in $provider_list){
     $result = Register-AzResourceProvider -ProviderNamespace $provider
     $status = $result.RegistrationState
